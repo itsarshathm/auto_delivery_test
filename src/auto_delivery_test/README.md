@@ -1,95 +1,134 @@
-# 🧠 Auto Delivery Test — TurtleBot3 ROS 2 Navigation
+# 🤖 TurtleBot3 Auto Delivery Robot - ROS 2 Humble
 
-This package implements an autonomous delivery robot simulation using **ROS 2 Humble**, **Nav2**, and **TurtleBot3 Burger** in **Gazebo**.  
-The robot performs intelligent delivery operations to customer tables based on input, timeouts, and cancellations.
-
----
-
-## 📦 System Requirements
-
-- Ubuntu 22.04  
-- ROS 2 Humble Hawksbill  
-- TurtleBot3 (Burger model)  
-- Gazebo 11  
-- nav2_simple_commander  
-- nav2_bringup  
-- Navigation2 stack (Nav2)
+A ROS 2 Humble-based autonomous delivery system using TurtleBot3 Burger and Nav2 stack in Gazebo. This project simulates a delivery robot that can move between a **home base**, **kitchen**, and multiple **tables** (1, 2, 3) based on order inputs and confirmations.
 
 ---
 
-## 📁 Folder Structure
+## 📋 Table of Contents
+
+- [🔧 Requirements](#-requirements)
+- [📦 Package Structure](#-package-structure)
+- [🧠 Project Logic](#-project-logic)
+- [🧪 Test Case Strategy](#-test-case-strategy)
+- [🚀 Launch Instructions](#-launch-instructions)
+- [📂 Folder Tree](#-folder-tree)
+
+
+---
+
+## 🔧 Requirements
+
+| Component              | Version              |
+|------------------------|----------------------|
+| Ubuntu                 | 22.04 LTS            |
+| ROS 2                  | Humble Hawksbill     |
+| Gazebo                 | Gazebo 11            |
+| TurtleBot3 Model       | burger               |
+| nav2_simple_commander  | included in nav2     |
+| Python Version         | 3.10                 |
+
+Install TurtleBot3 packages and dependencies before running.
+
+---
+
+## 📦 Package Structure
 
 turtlebot3_ws/
-├── src/
-│ └── auto_delivery_test/
-│ ├── auto_delivery_test/
-│ │ └── run_all_test_cases.py
-│ ├── package.xml
-│ ├── setup.py
-│ ├── README.md
-├── build/ ← after build
-├── install/ ← after build
-└── log/ ← after build
+└── src/
+└── auto_delivery_test/
+├── auto_delivery_test/
+│ └── run_all_test_cases.py
+├── launch/
+│ └── bringup_delivery.launch.py # Optional
+├── package.xml
+├── setup.py
+└── README.md
 
 
 
 ---
 
-## 🚀 How to Build
+## 🧠 Project Logic
 
+- Robot starts from **Home Position**
+- Waits for command `s` to begin delivery
+- Moves to **Kitchen**
+- Accepts **Table numbers** as input (e.g., `1 2 3`)
+- For each table:
+  - Cancels if `c` is pressed before reaching
+  - Waits for food pickup confirmation (Enter)
+  - Skips if timeout or cancelled
+- After all deliveries:
+  - If any skipped: returns to **Kitchen**, then goes **Home**
+  - If all delivered: goes directly **Home**
+
+---
+
+## 🧪 Test Case Strategy
+
+| Test Case | Description |
+|-----------|-------------|
+| **1**     | Simple delivery: Home → Kitchen → Table → Home |
+| **2**     | Timeout at kitchen → Return Home |
+| **3a**    | Timeout at kitchen → Return Home |
+| **3b**    | Timeout at table → Return Kitchen → Enter → Home |
+| **4**     | Cancel en route: Kitchen = go Home, Table = go Kitchen → Enter → Home |
+| **5**     | Multiple orders: Table 2, 1 → Enter after each → Home |
+| **6**     | Timeout at Table 2 → go Table 3 → go Table 1 → Kitchen → Home |
+| **7**     | Cancel Table 2 → deliver to 1, 3 → Kitchen → Home |
+
+---
+
+## 🚀 Launch Instructions
+
+Each command should be run in a separate terminal:
+
+### 🔹 Terminal 1 – Gazebo World
 ```bash
-cd ~/turtlebot3_ws
-colcon build
-source install/setup.bash
-
-
-## Terminal 1 – Launch Gazebo World
-
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
 source ~/turtlebot3_ws/install/setup.bash
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
 
-## Terminal 2 – Spawn Robot into Gazebo
+### 🔹 Terminal 2 – Spawn Robot in Gazebo
 
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
-
 ros2 run gazebo_ros spawn_entity.py \
   -entity burger \
   -file /opt/ros/humble/share/turtlebot3_gazebo/models/turtlebot3_burger/model.sdf \
   -x 0 -y 0 -z 0.01
 
 
-## Terminal 3 – Launch Nav2 Navigation Stack
+
+### 🔹 Terminal 3 – Launch Navigation2
 
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
 source ~/turtlebot3_ws/install/setup.bash
-
 ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True
 
-## Terminal 4 – Run Auto Delivery Logic
+
+
+### 🔹 Terminal 4 – Run Auto Delivery Code
 
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
 source ~/turtlebot3_ws/install/setup.bash
-
 ros2 run auto_delivery_test run_all_test_cases
 
+Folder Tree (summary)
 
+auto_delivery_test/
+├── auto_delivery_test/
+│   └── run_all_test_cases.py
+├── launch/
+│   └── bringup_delivery.launch.py  (optional)
+├── setup.py
+├── package.xml
+└── README.md
 
-Behavior & Test Case Summary
-Test Case	Description
-1	Home → Kitchen → Table → Wait for Enter → Home
-2	Home → Kitchen → Wait max 60s for Table input → If no input → Home
-3a	Same as TC2
-3b	Kitchen → Table → Timeout → Return to Kitchen → Wait Enter → Home
-4	Press c during move → Cancel: return to Home/Kitchen depending on when canceled
-5	Multiple tables: Go one by one → Wait Enter → Return to Home
-6	Skip tables on timeout → Go to kitchen after last → Home
-7	Cancel individual table in multi-order → Skip → Kitchen → Home
 
 
 Package Dependencies
