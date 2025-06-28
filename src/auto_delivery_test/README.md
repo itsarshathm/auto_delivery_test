@@ -95,20 +95,7 @@ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 This will open Gazebo with the TurtleBot3 simulation environment. You'll see a basic world with your robot placed.
 
 
-### 🔹 Terminal 2 – Spawn Robot in Gazebo
-
-export TURTLEBOT3_MODEL=burger
-source /opt/ros/humble/setup.bash
-ros2 run gazebo_ros spawn_entity.py \
-  -entity burger \
-  -file /opt/ros/humble/share/turtlebot3_gazebo/models/turtlebot3_burger/model.sdf \
-  -x 0 -y 0 -z 0.01
-
-📍 What happens:
-Spawns the TurtleBot3 robot into the Gazebo world at coordinate (0, 0). Now your robot is visible in the simulation.
-
-
-### 🔹 Terminal 3 – Launch Navigation2
+### 🔹 Terminal 2 – Launch Navigation2
 
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
@@ -133,7 +120,7 @@ Once RViz opens:
 
 🟢 After this, the robot is now fully localized and ready to receive navigation goals through code (goToPose() from your script) or manually (Nav Goal in RViz).
 
-### 🔹 Terminal 4 – Run Auto Delivery Code
+### 🔹 Terminal 3 – Run Auto Delivery Code
 
 export TURTLEBOT3_MODEL=burger
 source /opt/ros/humble/setup.bash
