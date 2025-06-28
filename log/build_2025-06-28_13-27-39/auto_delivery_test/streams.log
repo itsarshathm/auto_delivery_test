@@ -1,0 +1,37 @@
+[1.416s] Invoking command in '/home/arshath/turtlebot3_ws/src/auto_delivery_test': PYTHONPATH=/home/arshath/turtlebot3_ws/build/auto_delivery_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/auto_delivery_test build --build-base /home/arshath/turtlebot3_ws/build/auto_delivery_test/build install --record /home/arshath/turtlebot3_ws/build/auto_delivery_test/install.log --single-version-externally-managed install_data
+[1.630s] running egg_info
+[1.630s] creating ../../build/auto_delivery_test/auto_delivery_test.egg-info
+[1.631s] writing ../../build/auto_delivery_test/auto_delivery_test.egg-info/PKG-INFO
+[1.631s] writing dependency_links to ../../build/auto_delivery_test/auto_delivery_test.egg-info/dependency_links.txt
+[1.631s] writing entry points to ../../build/auto_delivery_test/auto_delivery_test.egg-info/entry_points.txt
+[1.632s] writing requirements to ../../build/auto_delivery_test/auto_delivery_test.egg-info/requires.txt
+[1.632s] writing top-level names to ../../build/auto_delivery_test/auto_delivery_test.egg-info/top_level.txt
+[1.632s] writing manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+[1.633s] reading manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+[1.634s] writing manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+[1.634s] running build
+[1.634s] running build_py
+[1.634s] creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build
+[1.634s] creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib
+[1.634s] creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+[1.635s] copying auto_delivery_test/run_all_test_cases.py -> /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+[1.635s] copying auto_delivery_test/__init__.py -> /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+[1.635s] running install
+[1.635s] running install_lib
+[1.636s] creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+[1.636s] copying /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test/run_all_test_cases.py -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+[1.636s] copying /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test/__init__.py -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+[1.636s] byte-compiling /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test/run_all_test_cases.py to run_all_test_cases.cpython-310.pyc
+[1.637s] byte-compiling /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test/__init__.py to __init__.cpython-310.pyc
+[1.638s] running install_data
+[1.638s] creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index
+[1.638s] creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index
+[1.638s] creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index/packages
+[1.638s] copying resource/auto_delivery_test -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index/packages
+[1.638s] copying package.xml -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/auto_delivery_test
+[1.638s] running install_egg_info
+[1.641s] Copying ../../build/auto_delivery_test/auto_delivery_test.egg-info to /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test-0.0.0-py3.10.egg-info
+[1.642s] running install_scripts
+[1.662s] Installing run_all_test_cases script to /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/auto_delivery_test
+[1.663s] writing list of installed files to '/home/arshath/turtlebot3_ws/build/auto_delivery_test/install.log'
+[1.693s] Invoked command in '/home/arshath/turtlebot3_ws/src/auto_delivery_test' returned '0': PYTHONPATH=/home/arshath/turtlebot3_ws/build/auto_delivery_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/auto_delivery_test build --build-base /home/arshath/turtlebot3_ws/build/auto_delivery_test/build install --record /home/arshath/turtlebot3_ws/build/auto_delivery_test/install.log --single-version-externally-managed install_data

@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/auto_delivery_test/auto_delivery_test.egg-info/PKG-INFO
+../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt
+../../build/auto_delivery_test/auto_delivery_test.egg-info/dependency_links.txt
+../../build/auto_delivery_test/auto_delivery_test.egg-info/entry_points.txt
+../../build/auto_delivery_test/auto_delivery_test.egg-info/requires.txt
+../../build/auto_delivery_test/auto_delivery_test.egg-info/top_level.txt
+../../build/auto_delivery_test/auto_delivery_test.egg-info/zip-safe
+auto_delivery_test/__init__.py
+auto_delivery_test/run_all_test_cases.py
+resource/auto_delivery_test
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/auto_delivery_test/auto_delivery_test.egg-info
+writing ../../build/auto_delivery_test/auto_delivery_test.egg-info/PKG-INFO
+writing dependency_links to ../../build/auto_delivery_test/auto_delivery_test.egg-info/dependency_links.txt
+writing entry points to ../../build/auto_delivery_test/auto_delivery_test.egg-info/entry_points.txt
+writing requirements to ../../build/auto_delivery_test/auto_delivery_test.egg-info/requires.txt
+writing top-level names to ../../build/auto_delivery_test/auto_delivery_test.egg-info/top_level.txt
+writing manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+reading manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+writing manifest file '../../build/auto_delivery_test/auto_delivery_test.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build
+creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib
+creating /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+copying auto_delivery_test/run_all_test_cases.py -> /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+copying auto_delivery_test/__init__.py -> /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test
+running install
+running install_lib
+creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+copying /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test/run_all_test_cases.py -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+copying /home/arshath/turtlebot3_ws/build/auto_delivery_test/build/lib/auto_delivery_test/__init__.py -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test
+byte-compiling /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test/run_all_test_cases.py to run_all_test_cases.cpython-310.pyc
+byte-compiling /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index
+creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index
+creating /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index/packages
+copying resource/auto_delivery_test -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/ament_index/resource_index/packages
+copying package.xml -> /home/arshath/turtlebot3_ws/install/auto_delivery_test/share/auto_delivery_test
+running install_egg_info
+Copying ../../build/auto_delivery_test/auto_delivery_test.egg-info to /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/python3.10/site-packages/auto_delivery_test-0.0.0-py3.10.egg-info
+running install_scripts
+Installing run_all_test_cases script to /home/arshath/turtlebot3_ws/install/auto_delivery_test/lib/auto_delivery_test
+writing list of installed files to '/home/arshath/turtlebot3_ws/build/auto_delivery_test/install.log'

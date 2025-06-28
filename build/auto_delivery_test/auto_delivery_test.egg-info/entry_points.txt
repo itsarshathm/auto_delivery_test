@@ -1,0 +1,3 @@
+[console_scripts]
+run_all_test_cases = auto_delivery_test.run_all_test_cases:main
+
